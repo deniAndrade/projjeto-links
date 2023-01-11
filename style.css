@@ -1,0 +1,184 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;/*medir aparte da borda da caixa*/
+}
+:root{
+  --text-color:white;
+  --bg-url: url(./assets/bg-mobile.jpg);
+  --stroke-color: rgba(255,255,255,0.5);
+  --surface-color: rgba(255,255,255,0.05);
+  --surface-color-hover: rgba(0, 0, 0, 0.02);
+  --highlight-color:rgba(255,255,255,0.2);
+  --switch-bg-url: url(./assets/moon-stars.svg);
+}
+.light{
+  --text-color:black;
+  --bg-url: url(./assets/bg-mobile.png);
+  --stroke-color: rgba(0, 0, 0, 0.5);
+  --surface-color: rgba(0, 0, 0, 0.05);
+  --surface-color-haver: rgba(0, 0, 0, 0.02);
+  --highlight-color:rgba(0, 0, 0, 0.1);
+  --switch-bg-url: url(./assets/sol-stars.svg);
+}
+body{/*background-image: url(./assets/Interface=Mobile\,\ Theme=Dark\ mode.png);*/
+
+/*background-repeat: no-repeat;não repita*/
+/*background-position:top center;nse mantar ao meio*/
+/*background-size: cover; cobre tela toda*/
+
+/* colocando em shortrand ou atalho
+colocar nesta ordem*/
+/*background: 'color'image'repeat'position'size';*/
+background: var(--bg-url)no-repeat top center/cover;
+}
+/*aplicando  a fonte de modo geral  obs.. nao esquecer de linkar no html antes
+  <meta charset="UTF-8">*/
+body *{
+  font-family: 'Inter', sans-serif;
+  color:var(--text-color);
+}
+#container{
+  width: 360px;
+
+  margin: 56px auto 0px;
+  padding: 0 24px;
+
+}
+/*profile*/
+#profile{
+  text-align: center;
+  padding: 24px;
+}
+#profile img {
+
+  width: 124px;
+
+
+  
+}
+
+
+#profile p{
+  font-weight: 500;/*peso*/
+line-height: 24px;/*altura da linha*/
+margin-top: 8px;
+}
+#switch{
+  /*relativo o posicionamento do elemento dentra da ccaixa onde ele se encontra absoluto*/
+  position: relative;
+  width: 64px;
+  margin: 4px auto;
+  
+
+}
+#switch button{
+  width: 32px;
+  height: 32px;
+  background: white var(--switch-bg-url) no-repeat center;
+  border: 0;
+  border-radius: 50%;
+;
+
+/*positon absolute pemeite que o elemeto se mova por toda caixa   em todas as direçoes  Z-index  left right top  e baixo*/
+position: absolute;
+left: 0;
+z-index: 1;
+top: 50%;
+transform: translateY(-50%);
+
+}
+ .light #switch button{
+  right: 0;
+  left: initial;
+ 
+ }
+/* quando o elemeto for  in-line  e eu quiser usar ele em modo block*/
+#switch span{
+  display: block;
+  width: 64px;
+  height: 24px;
+
+
+
+background:var(--surface-color);
+border-radius: 9999px;
+
+border: 1px solid var(--stroke-color);
+backdrop-filter: blur(4px);
+-webkit-backdrop-filter: blur(4px);
+}
+
+ ul{
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 24px 0;
+ }
+
+ ul li a {
+ 
+  display: flex;
+  justify-content: center;/*alinha o conteudo ao centro 
+  sentido horizontal
+
+
+    centro
+  -----|-----  */
+
+padding: 16px 24px;
+  align-items: center;/*alinha os itens  ao centra  da linha 
+    sentido vestical
+  |--centro--- | */
+  background: rgba(255,255,255,0.1);
+  border: 1px solid var(--stroke-color);
+
+  border-radius: 8px;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  text-decoration: none;/*altera onde fiva a linha do texto podendo  colocar e, baixo  ao meio ou em cima  ou ate retira */
+
+  font-weight: 500;
+  transition: background 0.3s;
+ }
+
+
+/*pseundo-selector_
+altera as coisa ao passar o mouse por cima */
+ ul li a:hover{
+  background:var(--surface-color-haver);
+  border: 1px solid var(--text-color);
+
+ }
+ /*social links */
+ #social-links{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+padding: 24px 0;
+font-size: 24px;
+ }
+ #social-links a{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+   padding: 16px;
+   border-radius: 50%;
+   transition: background 0.3s;
+ }
+ #social-links a:hover{
+  background:var(--highlight-color);
+ 
+  border-radius: 50%;
+
+ }
+ footer{
+  padding: 24px;
+  text-align: center;
+  font-size: 14px;
+ }
+
+ pareiem
+ Iniciando o light mode

@@ -19,7 +19,7 @@
   --surface-color: rgba(0, 0, 0, 0.05);
   --surface-color-haver: rgba(0, 0, 0, 0.02);
   --highlight-color:rgba(0, 0, 0, 0.1);
-  --switch-bg-url: url(./assets/sol-stars.svg);
+  --switch-bg-url: url(./assets/Sun.svg);
 }
 body{/*background-image: url(./assets/Interface=Mobile\,\ Theme=Dark\ mode.png);*/
 
@@ -89,11 +89,15 @@ left: 0;
 z-index: 1;
 top: 50%;
 transform: translateY(-50%);
+animation: slide-back 0.4s forwards;
 
 }
+#switch button:hover {
+  outline: 8px solid var(--surface-color);
+}
  .light #switch button{
-  right: 0;
-  left: initial;
+  /* para manter a alteraçao eu uso (forwards) */
+animation: slide-in 0.4s forwards;
  
  }
 /* quando o elemeto for  in-line  e eu quiser usar ele em modo block*/
@@ -192,4 +196,16 @@ font-size: 24px;
   .light{
     --bg-url: url(./assets/bg-descktop-light-mode.jpg);
   }
+}
+/* animações   coloco onome ue eu quiser(slide-in)*/
+@keyframes slide-in {
+  from {left:0;
+  } /*inicio  */
+  to {left: 50%;
+  }/* fim */
+
+}
+@keyframes slide-back{
+  from{left: 50%}
+  to{left: 0}
 }

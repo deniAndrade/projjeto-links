@@ -5,7 +5,7 @@
 }
 :root{
   --text-color:black;
-  --bg-url: url(./assets/bg-mobile.jpg);
+  --bg-url: url(./assets/bg-mobile.png );
   --stroke-color: rgba(255,255,255,0.5);
   --surface-color: rgba(255,255,255,0.05);
   --surface-color-hover: rgba(0, 0, 0, 0.02);
@@ -14,7 +14,7 @@
 }
 .light{
   --text-color:white;
-  --bg-url: url(./assets/bg-mobile.png);
+  --bg-url: url(./assets/bg-mobile.jpg);
   --stroke-color: rgba(0, 0, 0, 0.5);
   --surface-color: rgba(0, 0, 0, 0.05);
   --surface-color-haver: rgba(0, 0, 0, 0.02);
@@ -31,6 +31,7 @@ body{/*background-image: url(./assets/Interface=Mobile\,\ Theme=Dark\ mode.png);
 colocar nesta ordem*/
 /*background: 'color'image'repeat'position'size';*/
 background: var(--bg-url)no-repeat top center/cover;
+height: 100vh;
 }
 /*aplicando  a fonte de modo geral  obs.. nao esquecer de linkar no html antes
   <meta charset="UTF-8">*/
@@ -40,6 +41,7 @@ body *{
 }
 #container{
   width: 360px;
+  max-width: 588px;
 
   margin: 56px auto 0px;
   padding: 0 24px;
@@ -69,6 +71,7 @@ margin-top: 8px;
   position: relative;
   width: 64px;
   margin: 4px auto;
+
   
 
 }
@@ -76,7 +79,7 @@ margin-top: 8px;
   width: 32px;
   height: 32px;
   background: white var(--switch-bg-url) no-repeat center;
-  border: 0;
+  border:0;
   border-radius: 50%;
 ;
 
@@ -104,7 +107,7 @@ transform: translateY(-50%);
 background:var(--surface-color);
 border-radius: 9999px;
 
-border: 1px solid var(--stroke-color);
+border: 1px solid white;
 backdrop-filter: blur(4px);
 -webkit-backdrop-filter: blur(4px);
 }
@@ -180,5 +183,13 @@ font-size: 24px;
   font-size: 14px;
  }
 
- pareiem
- Iniciando o light mode
+/* media queries */
+/* aparte de 700px pra cima adicione estas regras */
+@media (min-width :700px){
+  :root{
+    --bg-url: url(./assets/bg-descktop-dark-mode.jpg);
+  }
+  .light{
+    --bg-url: url(./assets/bg-descktop-light-mode.jpg);
+  }
+}
